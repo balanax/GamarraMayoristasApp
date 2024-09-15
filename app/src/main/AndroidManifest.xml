@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GamarraMayoristasApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".perfil.CambiarClave"
+            android:exported="false" />
+        <activity
+            android:name=".perfil.ModificarPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".perfil.Ordenes"
+            android:exported="false" />
+        <activity
+            android:name=".pago.DetalleOrden"
+            android:exported="false" />
+        <activity
+            android:name=".perfil.Perfil"
+            android:exported="false" />
+        <activity
+            android:name=".pago.CompraFinalizada"
+            android:exported="false" />
+        <activity
+            android:name=".pago.NuevaDireccionEnvio"
+            android:exported="false" />
+        <activity
+            android:name=".pago.DireccionEnvio"
+            android:exported="false" />
+        <activity
+            android:name=".pago.NuevaTarjeta"
+            android:exported="false" />
+        <activity
+            android:name=".pago.MetodoPago"
+            android:exported="false" />
+        <activity
+            android:name=".carrito.CarritoVerificar"
+            android:exported="false" />
+        <activity
+            android:name=".carrito.CarritoItem"
+            android:exported="false" />
+        <activity
+            android:name=".carrito.Carrito"
+            android:exported="false" />
+        <activity
+            android:name=".producto.RatingReviews"
+            android:exported="false" />
+        <activity
+            android:name=".producto.DetalleProducto"
+            android:exported="false" />
+        <activity
+            android:name=".producto.SeleccionarCategoria"
+            android:exported="false" />
+        <activity
+            android:name=".producto.Categoria"
+            android:exported="false" />
+        <activity
+            android:name=".inicio.Favorito"
+            android:exported="false" />
+        <activity
+            android:name=".producto.Nuevo"
+            android:exported="false" />
+        <activity
+            android:name=".perfil.RecuperarClave"
+            android:exported="false" />
+        <activity
+            android:name=".inicio.Acceso"
+            android:exported="false" />
+        <activity
+            android:name=".inicio.Registro"
+            android:exported="false" />
+        <activity
+            android:name=".inicio.Inicio"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

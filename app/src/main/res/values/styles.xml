@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary"> @color/black</item>
+        </style>
+    <style name="HeadlineTextStyle">
+        <item name="android:textSize" > 34sp</item>
+        <item name="android:textColor"> @color/color_texto</item>
+        <item name="android:fontFamily">@font/metropolis_bold</item>
+        <item name="android:textStyle"> bold</item>
+
+    </style>
+
+    <style name="BtnAccesoTextStyle" >
+        <item name="android:textSize"> 14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/metropolis_bold</item>
+    </style>
+
+    <style name="textoStyle" >
+        <item name="android:textSize"> 14sp</item>
+        <item name="android:textColor"> @color/color_texto</item>
+        <item name="android:fontFamily">@font/metropolis_medium</item>
+    </style>
+
+    <style name="CustomTextStyle">
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textColor"> @color/color_texto</item>
+        <item name="android:fontFamily">@font/metropolis_medium</item>
+    </style>
+
+    <style name="FashionSaleStyle">
+        <item name="android:textSize"> 58sp</item>
+        <item name="android:fontFamily">@font/metropolis_bold</item>
+        <item name="android:textColor"> @color/white</item>
+        <item name="android:textStyle"> bold</item>
+        <item name="android:padding">5dp</item>
+
+    </style>
+
+    <style name="VerAhoraStyle" >
+        <item name="android:textSize"> 14sp</item>
+        <item name="android:textColor"> @color/white</item>
+        <item name="android:fontFamily">@font/metropolis_medium</item>
+    </style>
+
+    <style name="PromTextStyle" >
+        <item name="android:textSize"> 12sp</item>
+        <item name="android:textColor"> @color/colorHint</item>
+        <item name="android:fontFamily">@font/metropolis_regular</item>
+    </style>
+    
+</resources>
