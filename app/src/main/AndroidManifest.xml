@@ -25,7 +25,7 @@
             android:name=".pago.DetalleOrden"
             android:exported="false" />
         <activity
-            android:name=".perfil.Perfil"
+            android:name=".inicio.Inicio"
             android:exported="false" />
         <activity
             android:name=".pago.CompraFinalizada"
@@ -79,8 +79,9 @@
             android:name=".inicio.Registro"
             android:exported="false" />
         <activity
-            android:name=".inicio.Inicio"
-            android:exported="true" >
+            android:name=".perfil.Perfil"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
