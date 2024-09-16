@@ -7,12 +7,4 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red">#DB3022</color>
-    <color name="colorAccesoText">#000000</color>
-    <color name="colorBtnAccesoText">#FFFFFF</color>
-    <color name="color_boton_acceso">#DB3022</color>
-    <color name="color_fondo">#F9F9F9</color>
-    <color name="color_texto">#222222</color>
-    <color name="colorHint">#9B9B9B</color>
-
 </resources>
