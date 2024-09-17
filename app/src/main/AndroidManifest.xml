@@ -28,9 +28,6 @@
             android:name=".pago.DetalleOrden"
             android:exported="false" />
         <activity
-            android:name=".perfil.Perfil"
-            android:exported="false" />
-        <activity
             android:name=".pago.CompraFinalizada"
             android:exported="false" />
         <activity
