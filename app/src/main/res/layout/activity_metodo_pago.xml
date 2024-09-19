@@ -7,4 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".pago.MetodoPago">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="METODO PAGO"
+        android:drawableLeft="@drawable/baseline_arrow_left_24"
+        android:textColor="@color/black"
+        android:elevation="4dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
