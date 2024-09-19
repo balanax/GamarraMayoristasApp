@@ -146,7 +146,6 @@
         app:menu="@menu/menu_principal"
         tools:ignore="MissingConstraints" />
 
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
