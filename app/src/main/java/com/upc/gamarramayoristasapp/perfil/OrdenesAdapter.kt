@@ -7,10 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.upc.gamarramayoristasapp.R
 
-class OrdenesAdapter(private val ordenList: ArrayList<OrdenesModel>): RecyclerView.Adapter<OrdenesAdapter.ViewHolder>() {
+class OrdenesAdapter(
+    private val ordenList: ArrayList<OrdenesModel>,
+    private val onItemClick: (OrdenesModel) -> Unit
+): RecyclerView.Adapter<OrdenesAdapter.ViewHolder>() {
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-
         val nroorden =itemView.findViewById<TextView>(R.id.tvNroOrden)
         val fecha =itemView.findViewById<TextView>(R.id.tvFecha)
         val nrotraking =itemView.findViewById<TextView>(R.id.tvTraking)
@@ -32,6 +34,10 @@ class OrdenesAdapter(private val ordenList: ArrayList<OrdenesModel>): RecyclerVi
         holder.cantidad.text = orden.cantidad
         holder.monto.text = orden.monto
         holder.estado.text = orden.estado
+
+        holder.itemView.setOnClickListener {
+            onItemClick(orden)
+        }
     }
 
     override fun getItemCount(): Int {

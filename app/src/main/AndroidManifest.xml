@@ -20,7 +20,14 @@
             android:exported="false" />
         <activity
             android:name=".perfil.Perfil"
-            android:exported="false" />
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".pago.DetalleOrden"
             android:exported="false" />
@@ -80,13 +87,8 @@
             android:exported="false" />
         <activity
             android:name=".perfil.Ordenes"
-            android:exported="true"
+            android:exported="false"
             >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
     </application>
 

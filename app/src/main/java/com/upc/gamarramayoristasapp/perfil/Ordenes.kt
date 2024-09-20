@@ -1,5 +1,6 @@
 package com.upc.gamarramayoristasapp.perfil
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.pago.DetalleOrden
 
 class Ordenes : AppCompatActivity() {
 
@@ -37,7 +39,17 @@ class Ordenes : AppCompatActivity() {
         ordenList.add(OrdenesModel("5","195214558","12.06.2024","IW32125487","01","250.00","En Proceso"))
         ordenList.add(OrdenesModel("6","198457536","17.08.2024","IW33652158","03","60.00","Canceladas"))
 
-        val adapter = OrdenesAdapter(ordenList)
+        val adapter = OrdenesAdapter(ordenList) { orden ->
+            val intent = Intent(this, DetalleOrden::class.java).apply {
+                putExtra("nroOrden", orden.nrorden)
+                putExtra("fecha", orden.fecha)
+                putExtra("nrotraking", orden.nrotraking)
+                putExtra("cantidad", orden.cantidad)
+                putExtra("monto", orden.monto)
+                putExtra("estado", orden.estado)
+            }
+            startActivity(intent)
+        }
 
         recyclerView.adapter = adapter
     }
