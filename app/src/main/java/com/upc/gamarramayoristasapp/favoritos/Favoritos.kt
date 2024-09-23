@@ -20,8 +20,6 @@ class Favoritos : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_desplegable,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+
+
 }
