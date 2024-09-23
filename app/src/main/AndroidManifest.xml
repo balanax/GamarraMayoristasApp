@@ -41,7 +41,9 @@
             android:exported="false" />
         <activity
             android:name=".pago.MetodoPago"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
+
         <activity
             android:name=".carrito.CarritoVerificar"
             android:exported="false" />
@@ -83,7 +85,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
