@@ -5,9 +5,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.carrito.adapter.CarritoAdapter
 
 class Carrito : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -17,5 +21,12 @@ class Carrito : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        initRecycleView()
+    }
+
+    private fun initRecycleView(){
+        val recycleView = findViewById<RecyclerView>(R.id.recycleCarrito)
+        recycleView.layoutManager = LinearLayoutManager(this)
+        recycleView.adapter = CarritoAdapter(CarritoProvider.CarritoList)
     }
 }
