@@ -77,12 +77,14 @@
 
         </LinearLayout>
 
-        <Button
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SIGUIENTE"
-            android:backgroundTint="#ffffff"
-            android:hint="Introduce tu código Promocional"
+            android:layout_marginBottom="20dp"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:text="Introduce tu código Promocional"
+            android:background="#ffffff"
+            android:textColor="#B1B1B1"
             app:layout_constraintTop_toBottomOf="@+id/recycleCarrito"/>
 
         <Button
