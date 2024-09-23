@@ -2,6 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="#ffffff"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="4dp"
+    app:cardBackgroundColor="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
         <ImageView
@@ -42,7 +48,8 @@
             app:layout_constraintStart_toEndOf="@+id/tvColorProducto"
             app:layout_constraintTop_toTopOf="@+id/tvColorProducto"
             tools:ignore="MissingConstraints"
-            tools:text="Negro" />
+            tools:text="Negro"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tvTallaProducto"
@@ -62,17 +69,20 @@
             app:layout_constraintStart_toEndOf="@+id/tvTallaProducto"
             app:layout_constraintTop_toTopOf="@+id/tvColorProducto"
             tools:ignore="MissingConstraints"
-            tools:text="L" />
+            tools:text="L"
+            android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/btMenos"
             android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
+            android:backgroundTint="#ffffff"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/metropolis_black"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:text="-"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/ivCardCarrito"
             app:layout_constraintTop_toBottomOf="@id/tvColorProducto" />
 
@@ -86,12 +96,15 @@
             app:layout_constraintStart_toEndOf="@+id/btMenos"
             app:layout_constraintTop_toBottomOf="@+id/tvColorProducto"
             tools:ignore="MissingConstraints"
-            tools:text="1" />
+            tools:text="1"
+            android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/btMas"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="#ffffff"
+            android:textColor="@color/black"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/metropolis_black"
             android:paddingLeft="5dp"

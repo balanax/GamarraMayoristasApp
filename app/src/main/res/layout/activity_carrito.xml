@@ -5,9 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".carrito.Carrito">
+    tools:context=".carrito.Carrito"
+    android:background="#E7E7E7">
 
     <LinearLayout
+        android:id="@+id/llPrincipal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -44,13 +46,52 @@
             tools:ignore="MissingConstraints"
            />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="end"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total:"
+                android:textSize="20dp"
+                android:gravity="end"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="123dp" />
+
+            <TextView
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/metropolis_bold"
+                android:text="400.00"
+                android:textSize="20dp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGUIENTE"
+            android:backgroundTint="#ffffff"
+            android:hint="Introduce tu código Promocional"
+            app:layout_constraintTop_toBottomOf="@+id/recycleCarrito"/>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SIGUIENTE"
             app:layout_constraintTop_toBottomOf="@+id/recycleCarrito"/>
-
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/menu_layout"
@@ -76,6 +117,7 @@
             tools:ignore="MissingConstraints" />
 
     </LinearLayout>
+
 
 
 
