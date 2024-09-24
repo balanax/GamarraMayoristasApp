@@ -1,5 +1,6 @@
 package com.upc.gamarramayoristasapp.perfil
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +14,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.appgamarra.PerfilAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.carrito.Carrito
+import com.upc.gamarramayoristasapp.favoritos.Favoritos
+import com.upc.gamarramayoristasapp.inicio.Inicio
 import com.upc.gamarramayoristasapp.perfil.OptionPerfil
+import com.upc.gamarramayoristasapp.producto.Categoria
 
 class Perfil : AppCompatActivity() {
 
@@ -48,6 +54,43 @@ class Perfil : AppCompatActivity() {
         recycler=tabla
         recycler.layoutManager=LinearLayoutManager(this)
         recycler.adapter= PerfilAdapter(this, listaProfile)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView.selectedItemId = R.id.menu_perfil
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.menu_inicio -> {
+                    // Acción para Home
+                    var intent = Intent(this, Inicio::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_carrito -> {
+                    var intent = Intent(this, Carrito::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_categoria -> {
+                    var intent = Intent(this, Categoria::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_favoritos -> {
+                    var intent = Intent(this, Favoritos::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_perfil -> {
+                    var intent = Intent(this, Perfil::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
+
+
     }
 }
 //}

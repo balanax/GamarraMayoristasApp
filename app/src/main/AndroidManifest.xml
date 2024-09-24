@@ -41,7 +41,9 @@
             android:exported="false" />
         <activity
             android:name=".pago.MetodoPago"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
+
         <activity
             android:name=".carrito.CarritoVerificar"
             android:exported="false" />
@@ -69,6 +71,9 @@
             android:exported="false" />
         <activity
             android:name=".producto.Nuevo"
+            android:exported="false" />
+        <activity
+            android:name=".perfil.Perfil"
             android:exported="false" />
         <activity
             android:name=".perfil.RecuperarClave"
