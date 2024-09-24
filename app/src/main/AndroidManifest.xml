@@ -73,6 +73,9 @@
             android:name=".producto.Nuevo"
             android:exported="false" />
         <activity
+            android:name=".perfil.Perfil"
+            android:exported="false" />
+        <activity
             android:name=".perfil.RecuperarClave"
             android:exported="false" />
         <activity
