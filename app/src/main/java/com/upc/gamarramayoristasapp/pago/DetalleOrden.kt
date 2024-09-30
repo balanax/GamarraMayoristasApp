@@ -27,6 +27,9 @@ class DetalleOrden : AppCompatActivity() {
         val estado = intent.getStringExtra("estado")
 
         findViewById<TextView>(R.id.txtNroOrden).text = "Numero de orden : ${nroOrden}"
+        findViewById<TextView>(R.id.txtFecha).text = "${fecha}"
+        findViewById<TextView>(R.id.txtTraking).text = "Nro. Traking: ${nrotraking}"
+        findViewById<TextView>(R.id.txtEstado).text = "${estado}"
 
     }
 }

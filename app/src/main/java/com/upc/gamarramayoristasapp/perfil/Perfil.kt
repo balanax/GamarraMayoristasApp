@@ -69,7 +69,6 @@ class Perfil : AppCompatActivity() {
             }
         }
 
-
         recycler.adapter= adapter
     }
 }
