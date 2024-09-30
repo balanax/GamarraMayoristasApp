@@ -14,8 +14,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.appgamarra.PerfilAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.carrito.Carrito
+import com.upc.gamarramayoristasapp.favoritos.Favoritos
+import com.upc.gamarramayoristasapp.inicio.Inicio
 import com.upc.gamarramayoristasapp.perfil.OptionPerfil
+import com.upc.gamarramayoristasapp.producto.Categoria
 
 class Perfil : AppCompatActivity() {
 
@@ -72,4 +77,3 @@ class Perfil : AppCompatActivity() {
         recycler.adapter= adapter
     }
 }
-//}

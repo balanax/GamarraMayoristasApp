@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#DB3022</color>
     <color name="colorAccesoText">#000000</color>
-    <color name="colorBtnAccesoText">#FFFFFF</color>
+    <color name="colorBtnAccesoText">#E6E6E6</color>
     <color name="color_boton_acceso">#DB3022</color>
     <color name="color_fondo">#F9F9F9</color>
     <color name="color_texto">#222222</color>
