@@ -2,6 +2,7 @@ package com.upc.gamarramayoristasapp.carrito
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,6 +29,13 @@ class Carrito : AppCompatActivity() {
             insets
         }
         initRecycleView()
+
+        val btn_siguiente = findViewById<Button>(R.id.btSiguienteCarrito)
+
+        btn_siguiente.setOnClickListener {
+            var intent = Intent(this, CarritoVerificar::class.java)
+            startActivity(intent)
+        }
 
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
@@ -67,6 +75,7 @@ class Carrito : AppCompatActivity() {
         }
 
     }
+
 
     private fun initRecycleView(){
         val recycleView = findViewById<RecyclerView>(R.id.recycleCarrito)

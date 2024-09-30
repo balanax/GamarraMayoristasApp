@@ -8,25 +8,32 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.upc.gamarramayoristasapp.R
 import com.upc.gamarramayoristasapp.perfil.OptionPerfil
+import com.upc.gamarramayoristasapp.perfil.PerfilOptionType
 
 class PerfilAdapter(var context: Context,
-                     var ListProfile: MutableList<OptionPerfil>) :
+                     var ListProfile: MutableList<OptionPerfil>,
+                    private val onItemClick: (PerfilOptionType) -> Unit
+) :
     RecyclerView.Adapter<PerfilAdapter.ViewHolder>()
 {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        lateinit var txttitulo: TextView
-        init{
-            txttitulo = itemView.findViewById(R.id.tvTitle)
-        }
-        lateinit var txtsubtitulo: TextView
-        init{
-            txtsubtitulo = itemView.findViewById(R.id.tvSubtitle)
+        val txttitulo: TextView = itemView.findViewById(R.id.tvTitle)
+        val txtsubtitulo: TextView = itemView.findViewById(R.id.tvSubtitle)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val option = ListProfile[position]
+                    onItemClick(option.tipo)
+                }
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PerfilAdapter.ViewHolder {
-        var itemView = LayoutInflater.from(context).inflate(
+        val itemView = LayoutInflater.from(context).inflate(
             R.layout.perfil_option,parent,false)
         return ViewHolder(itemView)
     }
@@ -36,9 +43,9 @@ class PerfilAdapter(var context: Context,
     }
 
     override fun onBindViewHolder(holder: PerfilAdapter.ViewHolder, position: Int) {
-        var lista = ListProfile[position]
-        holder.txttitulo.text = lista.Titulo
-        holder.txtsubtitulo.text = lista.Subtitulo
+        val lista = ListProfile[position]
+        holder.txttitulo.text = lista.titulo
+        holder.txtsubtitulo.text = lista.subtitulo
     }
 
 
