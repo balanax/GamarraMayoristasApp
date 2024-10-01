@@ -70,6 +70,8 @@ class Perfil : AppCompatActivity() {
                 PerfilOptionType.MIS_RESEÑAS -> {
                 }
                 PerfilOptionType.AJUSTES -> {
+                    val intent = Intent(this, ModificarPerfil::class.java)
+                    startActivity(intent)
                 }
             }
         }
