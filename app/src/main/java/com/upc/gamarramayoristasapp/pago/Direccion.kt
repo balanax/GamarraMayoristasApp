@@ -1,6 +1,7 @@
 package com.upc.gamarramayoristasapp.pago
 
 data class Direccion  (
+                            val idDireccion:String,
                             val Nombre:String,
                             val Direccion:String,
                             val Region:String,
