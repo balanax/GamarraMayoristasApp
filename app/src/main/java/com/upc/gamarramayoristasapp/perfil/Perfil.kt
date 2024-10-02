@@ -75,5 +75,40 @@ class Perfil : AppCompatActivity() {
         }
 
         recycler.adapter= adapter
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView.selectedItemId = R.id.menu_perfil
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.menu_inicio -> {
+                    // Acción para Home
+                    var intent = Intent(this, Inicio::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_carrito -> {
+                    var intent = Intent(this, Carrito::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_categoria -> {
+                    var intent = Intent(this, Categoria::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_favoritos -> {
+                   var intent = Intent(this, Favoritos::class.java)
+                    startActivity(intent)
+                   true
+                }
+                R.id.menu_perfil -> {
+                    var intent = Intent(this, Perfil::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }
