@@ -1,7 +1,9 @@
 package com.upc.gamarramayoristasapp.pago
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,9 +26,23 @@ class DetalleOrden : AppCompatActivity() {
             insets
         }
 
-        recyclerView = findViewById(R.id.rvDetalleOrdenes)
+        // Configurar el botón "Atrás" en la UI
+        val btnBack = findViewById<Button>(R.id.btnBack)
+        btnBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed() // Controla el comportamiento de "Atrás"
+        }
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        // Configurar OnBackPressedCallback
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Aquí puedes personalizar el comportamiento del botón "Atrás"
+                finish() // Cierra la actividad actual
+            }
+        })
+
+        //recyclerView = findViewById(R.id.rvDetalleOrdenes)
+
+        //recyclerView.layoutManager = LinearLayoutManager(this)
 
         val nroOrden = intent.getStringExtra("nroOrden")
         val fecha = intent.getStringExtra("fecha")

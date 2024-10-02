@@ -7,5 +7,6 @@ data class OrdenesModel (
     val nrotraking: String,
     val cantidad: String,
     val monto: String,
-    val estado: String
+    val estado: String,
+   // val direccion: String
 )

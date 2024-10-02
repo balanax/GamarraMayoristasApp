@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.upc.gamarramayoristasapp.R
 
 class OrdenesAdapter(
-    private val ordenList: ArrayList<OrdenesModel>,
+    private val ordenList: List<OrdenesModel>,
     private val onItemClick: (OrdenesModel) -> Unit
 ): RecyclerView.Adapter<OrdenesAdapter.ViewHolder>() {
 
@@ -19,6 +19,7 @@ class OrdenesAdapter(
         val cantidad =itemView.findViewById<TextView>(R.id.tvCantidad)
         val monto =itemView.findViewById<TextView>(R.id.tvMonto)
         val estado =itemView.findViewById<TextView>(R.id.tvEstado)
+       // val direccion =itemView.findViewById<TextView>(R.id.tvDireccion)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrdenesAdapter.ViewHolder {
@@ -34,6 +35,7 @@ class OrdenesAdapter(
         holder.cantidad.text = orden.cantidad
         holder.monto.text = orden.monto
         holder.estado.text = orden.estado
+       // holder.direccion.text = orden.direccion
 
         holder.itemView.setOnClickListener {
             onItemClick(orden)

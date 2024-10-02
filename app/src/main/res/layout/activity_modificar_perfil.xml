@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/perfil"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".perfil.Perfil">
+    tools:context=".perfil.ModificarPerfil">
 
     <!-- ScrollView para toda la pantalla -->
     <ScrollView
@@ -16,8 +16,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
             android:padding="16dp">
 
             <!-- Ajustes -->
@@ -25,19 +25,22 @@
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/btnback"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:background="@drawable/back"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
                     <EditText
                         android:id="@+id/editTextText"
                         android:layout_width="match_parent"
@@ -57,14 +60,15 @@
                         android:textSize="16sp"
                         tools:ignore="SpeakableTextPresentCheck" />
                 </LinearLayout>
+
                 <TextView
                     style="@style/HeadlineTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:text="Ajustes"
                     android:fontFamily="@font/metropolis_bold"
+                    android:text="Ajustes"
                     android:textColor="@color/black"
                     android:textSize="40sp"
                     android:textStyle="bold" />
@@ -74,44 +78,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
                     android:text="Información Personal"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:layout_marginTop="15dp"/>
+                    android:textSize="20sp" />
 
                 <!-- Campo de Nombre Completo -->
                 <EditText
                     android:id="@+id/etNombres"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre completo"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/custom_edittext_background"
+                    android:hint="Nombre completo"
                     android:padding="16dp"
                     android:textColorHint="@android:color/darker_gray"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="16dp" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <!-- Campo de Fecha de Nacimiento -->
                 <EditText
                     android:id="@+id/etNacimiento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Fecha de nacimiento"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/custom_edittext_background"
+                    android:hint="Fecha de nacimiento"
                     android:padding="16dp"
                     android:textColorHint="@android:color/darker_gray"
-                    app:layout_constraintTop_toBottomOf="@+id/etName"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="16dp" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etName" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
                     android:layout_marginTop="15dp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <!-- Sección de Contraseña -->
                     <TextView
@@ -120,24 +125,23 @@
                         android:layout_marginStart="5dp"
                         android:text="Contraseña"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
-                        />
+                        android:textSize="20sp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="end"
-                        >
+                        android:gravity="end">
+
                         <TextView
                             android:id="@+id/tvChangePassword"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:text="Cambiar"
-                            android:textSize="20dp"
                             android:layout_gravity="end"
+                            android:text="Cambiar"
                             android:textColor="@android:color/darker_gray"
-                            app:layout_constraintTop_toTopOf="parent"
+                            android:textSize="20dp"
                             app:layout_constraintEnd_toEndOf="parent"
-                            />
+                            app:layout_constraintTop_toTopOf="parent" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -145,15 +149,15 @@
                     android:id="@+id/etClave"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="****************"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/custom_edittext_background"
-                    android:padding="16dp"
+                    android:hint="****************"
                     android:inputType="textPassword"
+                    android:padding="16dp"
                     android:textColorHint="@android:color/darker_gray"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="16dp" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <!-- Nombre centrado -->
                 <TextView
@@ -161,23 +165,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
                     android:text="Notificaciones"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:layout_marginTop="15dp"/>
+                    android:textSize="20sp" />
 
                 <!-- Notificación de Compras -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/tvNotifications"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp">
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNotifications">
 
                     <TextView
                         android:layout_width="0dp"
@@ -200,13 +204,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/tvNotifications"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp">
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNotifications">
 
                     <TextView
                         android:layout_width="0dp"
@@ -229,13 +233,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/tvNotifications"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="15dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp">
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNotifications">
 
                     <TextView
                         android:layout_width="0dp"
