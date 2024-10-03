@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".perfil.RecuperarClave">
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:padding="16dp"
+    android:gravity="start"
+    android:background="@color/color_fondo">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/HeadlineTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="43dp"
+        android:minHeight="25dp"
+        android:text="Recuperar contraseña" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        style="@style/CustomTextStyle"
+        android:text="@string/recuperar_contrasena" />
+
+    <EditText
+        android:id="@+id/recoverEmailEditText"
+        android:layout_width="340dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/background_caja_texto"
+        android:elevation="2dp"
+        android:textColorHint="@color/colorHint"
+        android:hint="Correo"
+        android:textSize="18sp"
+        android:padding="18dp"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:selectAllOnFocus="true"/>
+
+
+
+    <Button
+        android:id="@+id/recoverButton"
+        android:layout_width="343dp"
+        android:layout_height="65dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:enabled="true"
+        android:text="ENVIAR"
+        android:gravity="center"
+        android:padding="5dp"
+        style="@style/BtnAccesoTextStyle"
+        android:layout_below="@id/recoverEmailEditText"
+        android:backgroundTint="@color/color_boton_acceso" />
+
+
+</LinearLayout>

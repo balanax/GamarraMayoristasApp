@@ -1,10 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".inicio.Registro">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="start"
+    android:id="@+id/main"
+    android:background="@color/color_fondo">
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/HeadlineTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:minHeight="25dp"
+        android:text="Registro"
+        android:textSize="45dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="340dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/background_caja_texto"
+        android:elevation="2dp"
+        android:hint="Nombre"
+        android:textSize="18sp"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="18dp"
+        android:selectAllOnFocus="true"
+        android:textColorHint="@color/colorHint"
+        android:layout_gravity="start"/>
+
+    <EditText
+        android:id="@+id/correo"
+        android:layout_width="340dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/background_caja_texto"
+        android:elevation="2dp"
+        android:hint="Correo"
+        android:textSize="18sp"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="18dp"
+        android:selectAllOnFocus="true"
+        android:textColorHint="@color/colorHint" />
+
+
+    <EditText
+        android:id="@+id/contraseña"
+        android:layout_width="340dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/background_caja_texto"
+        android:elevation="2dp"
+        android:hint="Contraseña"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:textSize="18sp"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="18dp"
+        android:selectAllOnFocus="true"
+        android:textColorHint="@color/colorHint" />
+
+    <TextView
+        android:id="@+id/YaTieneCuenta"
+        style="@style/textoStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:text="¿ya tienes una cuenta?" />
+
+    <Button
+        android:id="@+id/login"
+        style="@style/BtnAccesoTextStyle"
+        android:layout_width="335dp"
+        android:layout_height="65dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="6dp"
+        android:backgroundTint="@color/color_boton_acceso"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:enabled="true"
+        android:text="ACCEDER" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/textoStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="70dp"
+        android:minHeight="35dp"
+        android:text="o regístrate con una cuenta social " />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iconoGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:background="@drawable/icon_background"
+            android:padding="5dp"
+            android:src="@drawable/logo_google" />
+
+        <ImageView
+            android:id="@+id/iconoFace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:background="@drawable/icon_background"
+            android:padding="5dp"
+            android:src="@drawable/icons_facebook" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -7,4 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".pago.DireccionEnvio">
 
+    <LinearLayout
+        android:id="@+id/menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnNuevaTarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Dirección de Envio"
+            android:drawableLeft="@drawable/baseline_arrow_left_24"
+            android:textColor="@color/black"
+            android:elevation="4dp"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="1dp"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

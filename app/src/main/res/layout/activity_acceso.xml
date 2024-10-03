@@ -1,44 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".inicio.Acceso">
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="start"
+    android:background="@color/color_fondo">
 
 
+<TextView
+    android:id="@+id/textView3"
+    style="@style/HeadlineTextStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="55dp"
+    android:layout_marginBottom="80dp"
+    android:minHeight="29dp"
+    android:textSize="45dp"
+    android:text="Acceso"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="bottom">
+<EditText
+android:id="@+id/emailEditText"
+android:layout_width="340dp"
+android:layout_height="64dp"
+android:layout_marginStart="16dp"
+android:background="@drawable/background_caja_texto"
+android:elevation="2dp"
+android:hint="Correo"
+android:textSize="18sp"
+android:gravity="start|center_vertical"
+android:inputType="textEmailAddress"
+android:minHeight="48dp"
+android:padding="18dp"
+android:selectAllOnFocus="true"
+android:textColorHint="@color/colorHint"
+android:layout_gravity="start"/>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/menu_principal"
-            tools:ignore="MissingConstraints" />
 
+<EditText
+android:id="@+id/passwordEditText"
+android:layout_width="340dp"
+android:layout_height="64dp"
+android:layout_marginStart="16dp"
+android:layout_marginTop="25dp"
+android:background="@drawable/background_caja_texto"
+android:elevation="3dp"
+android:hint="Contraseña"
+android:textSize="18sp"
+android:imeActionLabel="@string/action_sign_in_short"
+android:imeOptions="actionDone"
+android:inputType="textPassword"
+android:layout_below="@id/emailEditText"
+android:gravity="start|center_vertical"
+android:minHeight="48dp"
+android:padding="18dp"
+android:selectAllOnFocus="true"
+android:textColorHint="@color/colorHint" />
 
+<TextView
+android:id="@+id/forgotPasswordTextView"
+style="@style/textoStyle"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="16dp"
+android:layout_marginTop="12dp"
+android:text="¿Olvidaste tu contraseña?"
+android:layout_below="@id/loginButton"/>
+
+<Button
+android:id="@+id/loginButton"
+style="@style/BtnAccesoTextStyle"
+android:layout_width="335dp"
+android:layout_height="65dp"
+android:layout_gravity="start"
+android:layout_marginStart="20dp"
+android:layout_marginTop="50dp"
+android:layout_marginEnd="40dp"
+android:layout_marginBottom="64dp"
+android:backgroundTint="@color/color_boton_acceso"
+android:layout_below="@id/passwordEditText"
+android:textSize="18sp"
+android:gravity="center"
+android:enabled="true"
+android:text="ACCEDER" />
+
+<TextView
+android:id="@+id/textView"
+style="@style/textoStyle"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginTop="50dp"
+android:layout_marginStart="70dp"
+android:minHeight="35dp"
+android:text="iniciar sesión con una cuenta social " />
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="horizontal">
+
+<ImageView
+    android:id="@+id/iconoGoogle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="110dp"
+    android:background="@drawable/icon_background"
+    android:padding="5dp"
+    android:src="@drawable/logo_google" />
+
+<ImageView
+    android:id="@+id/iconoFb"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="21dp"
+    android:background="@drawable/icon_background"
+    android:gravity="center_horizontal"
+    android:padding="5dp"
+    android:scaleType="fitCenter"
+    android:src="@drawable/icons_facebook" />
+</LinearLayout>
     </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
