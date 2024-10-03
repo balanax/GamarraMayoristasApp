@@ -32,28 +32,49 @@ class Perfil : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_perfil)
 
-        //ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-        //  val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-        //  v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-        //  insets
-
         listaProfile.add(
-            OptionPerfil("Mis Pedidos", "Ya tengo 12 pedidos"))
+            OptionPerfil("Mis Pedidos", "Ya tengo 12 pedidos", PerfilOptionType.MIS_PEDIDOS)
+        )
         listaProfile.add(
-            OptionPerfil("Direcciones de envío", "3 direcciones"))
+            OptionPerfil("Direcciones de envío", "3 direcciones", PerfilOptionType.DIRECCIONES_ENVIO)
+        )
         listaProfile.add(
-            OptionPerfil("Métodos de pago", "Visa **34"))
+            OptionPerfil("Métodos de pago", "Visa **34", PerfilOptionType.METODOS_PAGO)
+        )
         listaProfile.add(
-            OptionPerfil("Códigos promocionales", "Tienes códigos promocionales especiales."))
+            OptionPerfil("Códigos promocionales", "Tienes códigos promocionales especiales.", PerfilOptionType.CODIGOS_PROMOCIONALES)
+        )
         listaProfile.add(
-            OptionPerfil("Mis reseñas", "Reseñas de 4 artículos"))
+            OptionPerfil("Mis reseñas", "Reseñas de 4 artículos", PerfilOptionType.MIS_RESEÑAS)
+        )
         listaProfile.add(
-            OptionPerfil("Ajustes", "Notificaciones, contraseña"))
+            OptionPerfil("Ajustes", "Notificaciones, contraseña", PerfilOptionType.AJUSTES)
+        )
 
         var tabla = findViewById<RecyclerView>(R.id.tablaProfile)
         recycler=tabla
         recycler.layoutManager=LinearLayoutManager(this)
-        recycler.adapter= PerfilAdapter(this, listaProfile)
+
+        val adapter = PerfilAdapter(this, listaProfile) { tipo ->
+            when (tipo) {
+                PerfilOptionType.MIS_PEDIDOS -> {
+                    val intent = Intent(this, Ordenes::class.java)
+                    startActivity(intent)
+                }
+                PerfilOptionType.DIRECCIONES_ENVIO -> {
+                }
+                PerfilOptionType.METODOS_PAGO -> {
+                }
+                PerfilOptionType.CODIGOS_PROMOCIONALES -> {
+                }
+                PerfilOptionType.MIS_RESEÑAS -> {
+                }
+                PerfilOptionType.AJUSTES -> {
+                }
+            }
+        }
+
+        recycler.adapter= adapter
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.selectedItemId = R.id.menu_perfil
@@ -77,9 +98,9 @@ class Perfil : AppCompatActivity() {
                     true
                 }
                 R.id.menu_favoritos -> {
-                    var intent = Intent(this, Favoritos::class.java)
+                   var intent = Intent(this, Favoritos::class.java)
                     startActivity(intent)
-                    true
+                   true
                 }
                 R.id.menu_perfil -> {
                     var intent = Intent(this, Perfil::class.java)
@@ -89,8 +110,5 @@ class Perfil : AppCompatActivity() {
                 else -> false
             }
         }
-
-
     }
 }
-//}

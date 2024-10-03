@@ -45,7 +45,7 @@
                     android:padding="8dp"
                     android:textColor="#9aa2aa"
                     android:textSize="16sp"
-                 />
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <TextView
                     android:id="@+id/textView3"
