@@ -8,6 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.upc.gamarramayoristasapp.Model.OrdenesModel
+import com.upc.gamarramayoristasapp.Model.UsuarioModel
 import com.upc.gamarramayoristasapp.R
 import com.upc.gamarramayoristasapp.database.DatabaseHelper
 import com.upc.gamarramayoristasapp.pago.DetalleOrden
@@ -34,8 +36,8 @@ class Ordenes : AppCompatActivity() {
         // Inicializar la base de datos
         dbHelper = DatabaseHelper(this)
 
-//        val nuevaOrden1 = OrdenesModel("1", "195485236", "02.10.2024", "IW32654875", "02", "154.20", "Entregado")
-//        dbHelper.insertOrden(nuevaOrden1)
+//        val nuevoUsuario1 = UsuarioModel("1", "123456", "Paul", "Meza", "40985632", "948020735", "elhughxd@gmail.com","1","1")
+//        dbHelper.insertUsuario(nuevoUsuario1)
 
 //        val nuevaOrden2 = OrdenesModel("2", "199377236", "02.10.2024", "IW32684775", "02", "130.20", "Entregado")
 //        dbHelper.insertOrden(nuevaOrden2)

@@ -1,4 +1,4 @@
-package com.upc.gamarramayoristasapp.perfil
+package com.upc.gamarramayoristasapp.Model
 
 data class OrdenesModel (
     val id: String,
@@ -8,5 +8,4 @@ data class OrdenesModel (
     val cantidad: String,
     val monto: String,
     val estado: String,
-   // val direccion: String
 )

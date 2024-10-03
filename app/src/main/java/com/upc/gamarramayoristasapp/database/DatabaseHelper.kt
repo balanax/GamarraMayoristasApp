@@ -5,7 +5,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.content.ContentValues
 import android.database.Cursor
-import com.upc.gamarramayoristasapp.perfil.OrdenesModel
+import com.upc.gamarramayoristasapp.Model.OrdenesModel
+import com.upc.gamarramayoristasapp.Model.UsuarioModel
 
 // Clase que maneja la base de datos
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -15,20 +16,50 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         private const val DATABASE_VERSION = 1
 
         // Nombre de la tabla y columnas
+        const val TABLE_USUARIO = "usuario"
         const val TABLE_ORDENES = "ordenes"
-        const val COLUMN_ID = "id"
+        const val TABLE_ORDENESDETALLE = "detalleorden"
+
+        // Nombre de Columnas para la tabla Usuario
+        const val COLUMN_ID_USUARIO = "id_usuario"
+        const val COLUMN_CLAVE = "clave"
+        const val COLUMN_NOMBRES = "nombres"
+        const val COLUMN_APELLIDOS = "apellidos"
+        const val COLUMN_DNI = "dni"
+        const val COLUMN_TELEFONO = "telefono"
+        const val COLUMN_CORREO = "correo"
+        const val COLUMN_HABILITADO = "habilitado"
+        const val COLUMN_LOGIN = "login"
+
+        // Nombre de Columnas para la tabla Ordenes
+        const val COLUMN_ID_ORDEN = "id"
         const val COLUMN_NRORDEN = "nrorden"
         const val COLUMN_FECHA = "fecha"
         const val COLUMN_NROTRAKING = "nrotraking"
         const val COLUMN_CANTIDAD = "cantidad"
         const val COLUMN_MONTO = "monto"
         const val COLUMN_ESTADO = "estado"
+
     }
 
-    override fun onCreate(db: SQLiteDatabase) {
-        // Crear la tabla de Órdenes
+    fun CreateTable_usuario(db: SQLiteDatabase){
+        val createTable = ("CREATE TABLE $TABLE_USUARIO ("
+                + "$COLUMN_ID_USUARIO INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "$COLUMN_CLAVE TEXT, "
+                + "$COLUMN_NOMBRES TEXT, "
+                + "$COLUMN_APELLIDOS TEXT, "
+                + "$COLUMN_DNI TEXT, "
+                + "$COLUMN_TELEFONO TEXT, "
+                + "$COLUMN_CORREO TEXT, "
+                + "$COLUMN_HABILITADO TEXT, "
+                + "$COLUMN_LOGIN TEXT)"
+                )
+        db.execSQL(createTable)
+    }
+
+    fun CreateTable_ordenes(db: SQLiteDatabase){
         val createTable = ("CREATE TABLE $TABLE_ORDENES ("
-                + "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "$COLUMN_ID_ORDEN INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "$COLUMN_NRORDEN TEXT, "
                 + "$COLUMN_FECHA TEXT, "
                 + "$COLUMN_NROTRAKING TEXT, "
@@ -36,6 +67,12 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 + "$COLUMN_MONTO TEXT, "
                 + "$COLUMN_ESTADO TEXT)")
         db.execSQL(createTable)
+    }
+
+    // Crear la tablas
+    override fun onCreate(db: SQLiteDatabase) {
+        CreateTable_ordenes(db);
+        CreateTable_usuario(db);
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -55,7 +92,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             if (cursor.moveToFirst()) {
                 do {
                     val orden = OrdenesModel(
-                        id = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ID)),
+                        id = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ID_ORDEN)),
                         nrorden = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NRORDEN)),
                         fecha = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FECHA)),
                         nrotraking = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NROTRAKING)),
@@ -72,6 +109,35 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return ordenList
     }
 
+    fun getInfoUsuarioById(id_usuario: String): UsuarioModel? {
+        val selectQuery = "SELECT * FROM $TABLE_USUARIO WHERE $COLUMN_ID_USUARIO = ?"
+        val db = this.readableDatabase
+        val cursor: Cursor? = db.rawQuery(selectQuery, arrayOf(id_usuario))
+
+        var usuario: UsuarioModel? = null
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                usuario = UsuarioModel(
+                    id_usuario = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ID_USUARIO)),
+                    clave = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CLAVE)),
+                    nombres = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NOMBRES)),
+                    apellidos = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_APELLIDOS)),
+                    dni = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DNI)),
+                    telefono = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TELEFONO)),
+                    correo = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CORREO)),
+                    habilitado = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_HABILITADO)),
+                    login = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_LOGIN))
+                )
+            }
+            cursor.close()
+        }
+
+        db.close() // Cerramos la base de datos
+        return usuario
+    }
+
+
     // Función para insertar una nueva orden
     fun insertOrden(orden: OrdenesModel) {
         val db = this.writableDatabase
@@ -84,5 +150,21 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             put(COLUMN_ESTADO, orden.estado)
         }
         db.insert(TABLE_ORDENES, null, values)
+    }
+
+    // Función para insertar un nuevo usuario
+    fun insertUsuario(usuario: UsuarioModel) {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_CLAVE, usuario.clave)
+            put(COLUMN_NOMBRES, usuario.nombres)
+            put(COLUMN_APELLIDOS, usuario.apellidos)
+            put(COLUMN_DNI  , usuario.dni)
+            put(COLUMN_TELEFONO, usuario.telefono)
+            put(COLUMN_CORREO, usuario.correo)
+            put(COLUMN_HABILITADO, usuario.habilitado)
+            put(COLUMN_LOGIN, usuario.login)
+        }
+        db.insert(TABLE_USUARIO, null, values)
     }
 }
