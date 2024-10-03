@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".inicio.Inicio_Nuevo"
+            android:exported="false" />
+        <activity
             android:name=".favoritos.GrabarActivity"
             android:exported="false" />
         <activity
@@ -31,8 +34,8 @@
             android:name=".perfil.ModificarPerfil"
             android:exported="false" />
         <activity
-            android:name=".perfil.Ordenes"
-            android:exported="false" />
+            android:name=".perfil.Perfil"
+            android:exported="false"></activity>
         <activity
             android:name=".pago.DetalleOrden"
             android:exported="false" />
@@ -53,7 +56,7 @@
             android:exported="false" />
         <activity
             android:name=".pago.MetodoPago"
-            android:exported="false">
+            android:exported="false"></activity>
         </activity>
         <activity
             android:name=".carrito.CarritoVerificar"
@@ -63,7 +66,7 @@
             android:exported="false" />
         <activity
             android:name=".carrito.Carrito"
-            android:exported="false" />
+            android:exported="false"></activity>
         <activity
             android:name=".producto.RatingReviews"
             android:exported="false" />
@@ -83,6 +86,9 @@
             android:name=".producto.Nuevo"
             android:exported="false" />
         <activity
+            android:name=".perfil.Perfil"
+            android:exported="false" />
+        <activity
             android:name=".perfil.RecuperarClave"
             android:exported="false" />
         <activity
@@ -90,6 +96,9 @@
             android:exported="false" />
         <activity
             android:name=".inicio.Registro"
+            android:exported="false" />
+        <activity
+            android:name=".perfil.Ordenes"
             android:exported="false" />
         <activity
             android:name=".inicio.Inicio"

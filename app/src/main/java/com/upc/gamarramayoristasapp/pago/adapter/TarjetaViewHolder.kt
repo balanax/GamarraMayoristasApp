@@ -75,8 +75,4 @@ class TarjetaViewHolder (view: View): RecyclerView.ViewHolder(view) {
 
     }
 
-
-
-
-
 }

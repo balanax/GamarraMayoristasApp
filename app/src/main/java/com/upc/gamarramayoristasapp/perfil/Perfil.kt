@@ -126,5 +126,7 @@ class Perfil : AppCompatActivity() {
                 else -> false
             }
         }
+
+        recycler.adapter= adapter
     }
 }

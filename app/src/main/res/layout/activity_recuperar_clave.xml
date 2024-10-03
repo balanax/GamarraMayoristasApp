@@ -1,88 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".perfil.RecuperarClave">
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:padding="16dp"
+    android:gravity="start"
+    android:background="@color/color_fondo">
 
     <TextView
         android:id="@+id/textView3"
+        style="@style/HeadlineTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="43dp"
         android:minHeight="25dp"
-        android:text="Recuperar contraseña"
-        android:textStyle="bold"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="368dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="24dp"
-        android:elevation="2dp"
-        android:hint="Ingrese su Correo"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:padding="18dp"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <Button
-        android:id="@+id/login"
-        android:layout_width="343dp"
-        android:layout_height="65dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="256dp"
-        android:backgroundTint="#C30606"
-        android:enabled="true"
-        android:padding="5dp"
-        android:text="ENVIAR"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        app:layout_constraintVertical_bias="0.25" />
-
+        android:text="Recuperar contraseña" />
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="36dp"
-        android:requiresFadingEdge=""
-        android:text="Por correo recibira un enlace para cambiar la contraseña"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login"
-        app:layout_constraintVertical_bias="0.457" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        style="@style/CustomTextStyle"
+        android:text="@string/recuperar_contrasena" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.986"
-        app:menu="@menu/menu_principal"
-        tools:ignore="MissingConstraints" />
+    <EditText
+        android:id="@+id/recoverEmailEditText"
+        android:layout_width="340dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/background_caja_texto"
+        android:elevation="2dp"
+        android:textColorHint="@color/colorHint"
+        android:hint="Correo"
+        android:textSize="18sp"
+        android:padding="18dp"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:selectAllOnFocus="true"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/recoverButton"
+        android:layout_width="343dp"
+        android:layout_height="65dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:enabled="true"
+        android:text="ENVIAR"
+        android:gravity="center"
+        android:padding="5dp"
+        style="@style/BtnAccesoTextStyle"
+        android:layout_below="@id/recoverEmailEditText"
+        android:backgroundTint="@color/color_boton_acceso" />
+
+
+</LinearLayout>

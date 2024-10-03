@@ -7,8 +7,7 @@
     <!-- Borde del botón -->
     <stroke
         android:width="5dp"
-        android:color="#DB3022"
-        />
+        android:color="#DB3022" />
 
     <!-- Bordes redondeados -->
     <corners android:radius="16dp" />

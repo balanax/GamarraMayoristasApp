@@ -9,7 +9,7 @@
     android:id="@+id/main">
 
 <ScrollView
-
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_fondo"
@@ -19,53 +19,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".activity_inicio">
+        tools:context=".activity_inicio_nuevo">
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_width="514dp"
+                android:layout_height="285dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/big_banner"
+                app:srcCompat="@drawable/img_banner_inicio_nuevo"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteY="0dp" />
-
-            <TextView
-                android:id="@+id/texfashion"
-                style="@style/FashionSaleStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="56dp"
-                android:gravity="left"
-                android:text="Fashion\nSale"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="347dp" />
-
-            <Button
-                android:id="@+id/button"
-                style="@style/VerAhoraStyle"
-                android:layout_width="160dp"
-                android:layout_height="48dp"
-                android:layout_gravity="bottom|start"
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/background_button"
-                android:enabled="true"
-                android:gravity="center"
-                android:text="Ver ahora"
-                android:textAllCaps="false"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="29dp"
-                tools:layout_editor_absoluteY="489dp" />
 
         </FrameLayout>
 
@@ -74,7 +43,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
-
 
             <TextView
                 android:id="@+id/textnuevo"
@@ -92,16 +60,7 @@
                 android:gravity="left"
                 android:text="!Nunca lo has visto antes!" />
 
-            <TextView
-                android:id="@+id/textVertodo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_marginLeft="330dp"
-                android:gravity="start"
-                android:text="ver todo "
-                android:textSize="12dp"
-                tools:ignore="TextSizeCheck" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -117,11 +76,12 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageDetalleProd1"
+                    android:id="@+id/imageView1"
                     android:layout_width="168dp"
                     android:layout_height="184dp"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/maincaminsa_mujer" />
+
                 <TextView
                     android:id="@+id/textView8"
                     style="@style/PromTextStyle"
@@ -140,13 +100,14 @@
                     android:text="Blusa Mujer\n30$" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:orientation="vertical">
                 <ImageView
-                    android:id="@+id/imageDetalleProd2"
+                    android:id="@+id/imageView2"
                     android:layout_width="168dp"
                     android:layout_height="184dp"
                     android:scaleType="centerCrop"
@@ -181,7 +142,6 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -204,16 +164,6 @@
                 android:gravity="left"
                 android:text="Rebajas de verano"/>
 
-            <TextView
-                android:id="@+id/textVertodo2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_marginLeft="330dp"
-                android:gravity="start"
-                android:text="ver todo "
-                android:textSize="12dp"
-                tools:ignore="TextSizeCheck" />
 
         </LinearLayout>
 
@@ -223,13 +173,15 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="10dp">
+
                 <ImageView
-                    android:id="@+id/imageDetalleProd3"
+                    android:id="@+id/imageView3"
                     android:layout_width="168dp"
                     android:layout_height="184dp"
                     android:scaleType="centerCrop"
@@ -253,66 +205,64 @@
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:padding="10dp">
 
-                <ImageView
-                    android:id="@+id/imageDetalleProd4"
-                    android:layout_width="168dp"
-                    android:layout_height="184dp"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@drawable/camisahom" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    style="@style/PromTextStyle"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:text="Mango Boy"
-                    tools:ignore="MissingConstraints" />
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView17"
-                    style="@style/textoStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:lineSpacingExtra="1dp"
-                    android:text="Polo Oversized Fit\n70$" />
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="168dp"
+                        android:layout_height="184dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/camisahom" />
 
+                    <TextView
+                        android:id="@+id/textView16"
+                        style="@style/PromTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Mango Boy"
+                        tools:ignore="MissingConstraints" />
 
+                    <TextView
+                        android:id="@+id/textView17"
+                        style="@style/textoStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Polo Oversized Fit\n70$" />
+
+                </LinearLayout>
             </LinearLayout>
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ver todo "
-                tools:ignore="MissingConstraints"/>
-
         </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
     </LinearLayout>
 
-
 </ScrollView>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:menu="@menu/menu_principal"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/menu_principal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
