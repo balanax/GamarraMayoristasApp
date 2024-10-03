@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,8 +16,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.appgamarra.PerfilAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.upc.gamarramayoristasapp.Model.OrdenesModel
+import com.upc.gamarramayoristasapp.Model.UsuarioModel
 import com.upc.gamarramayoristasapp.R
 import com.upc.gamarramayoristasapp.carrito.Carrito
+import com.upc.gamarramayoristasapp.database.DatabaseHelper
 import com.upc.gamarramayoristasapp.favoritos.Favoritos
 import com.upc.gamarramayoristasapp.inicio.Inicio
 import com.upc.gamarramayoristasapp.perfil.OptionPerfil
@@ -26,11 +30,21 @@ class Perfil : AppCompatActivity() {
 
     private var listaProfile: MutableList<OptionPerfil> = mutableListOf()
     private lateinit var recycler: RecyclerView
+    private lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_perfil)
+
+        dbHelper = DatabaseHelper(this)
+
+        val Nombres = findViewById<TextView>(R.id.tvNombres)
+        val Correo = findViewById<TextView>(R.id.tvCorreo)
+        val usuario = dbHelper.getInfoUsuarioById("1")
+
+        Nombres.setText(usuario?.nombres + " "+ usuario?.apellidos)
+        Correo.setText(usuario?.correo)
 
         listaProfile.add(
             OptionPerfil("Mis Pedidos", "Ya tengo 12 pedidos", PerfilOptionType.MIS_PEDIDOS)
@@ -70,7 +84,46 @@ class Perfil : AppCompatActivity() {
                 PerfilOptionType.MIS_RESEÑAS -> {
                 }
                 PerfilOptionType.AJUSTES -> {
+                    val intent = Intent(this, ModificarPerfil::class.java)
+                    startActivity(intent)
                 }
+            }
+        }
+
+        recycler.adapter= adapter
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView.selectedItemId = R.id.menu_perfil
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.menu_inicio -> {
+                    // Acción para Home
+                    var intent = Intent(this, Inicio::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_carrito -> {
+                    var intent = Intent(this, Carrito::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_categoria -> {
+                    var intent = Intent(this, Categoria::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_favoritos -> {
+                   var intent = Intent(this, Favoritos::class.java)
+                    startActivity(intent)
+                   true
+                }
+                R.id.menu_perfil -> {
+                    var intent = Intent(this, Perfil::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
             }
         }
 

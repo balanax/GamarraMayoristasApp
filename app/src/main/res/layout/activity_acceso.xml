@@ -122,4 +122,3 @@ android:orientation="horizontal">
     android:src="@drawable/icons_facebook" />
 </LinearLayout>
     </LinearLayout>
-

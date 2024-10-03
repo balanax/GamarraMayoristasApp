@@ -48,6 +48,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <TextView
+        android:id="@+id/tvid_metodo_pago"
+        android:layout_width="48dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="92dp"
+        android:fontFamily="sans-serif"
+        android:text="1"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvpan"
         android:layout_width="203dp"

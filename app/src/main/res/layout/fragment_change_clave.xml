@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- Título del cuadro de diálogo -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cambio de Contraseña"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp" />
+
+        <!-- Campo para la contraseña anterior -->
+        <EditText
+            android:id="@+id/etOldPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña anterior"
+            android:inputType="textPassword"
+            android:background="@drawable/custom_edittext_background"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Texto para recuperar contraseña -->
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Has olvidado tu contraseña?"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_gravity="end"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Campo para la nueva contraseña -->
+        <EditText
+            android:id="@+id/etNewPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nueva contraseña"
+            android:inputType="textPassword"
+            android:background="@drawable/custom_edittext_background"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Campo para repetir nueva contraseña -->
+        <EditText
+            android:id="@+id/etRepeatPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Repite nueva contraseña"
+            android:inputType="textPassword"
+            android:background="@drawable/custom_edittext_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón de guardar contraseña -->
+        <Button
+            android:id="@+id/btnSavePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR CONTRASEÑA"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

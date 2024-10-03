@@ -3,6 +3,7 @@ package com.upc.gamarramayoristasapp.favoritos
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -34,12 +35,12 @@ class Favoritos : AppCompatActivity() {
             when (item.itemId) {
                 R.id.menu_inicio -> {
                     // Acción para Home
-                    var intent = Intent(this,Inicio::class.java)
+                    var intent = Intent(this, Inicio::class.java)
                     startActivity(intent)
                     true
                 }
                 R.id.menu_carrito -> {
-                    var intent = Intent(this,Carrito::class.java)
+                    var intent = Intent(this, Carrito::class.java)
                     startActivity(intent)
                     true
                 }
@@ -62,7 +63,14 @@ class Favoritos : AppCompatActivity() {
             }
         }
 
+        val btn_Buscar = findViewById<Button>(R.id.btn_Buscar)
+
+        btn_Buscar.setOnClickListener {
+            var intent = Intent(this, BuscarActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
     }
-
 }
