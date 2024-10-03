@@ -1,17 +1,30 @@
 package com.upc.gamarramayoristasapp.pago
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.upc.gamarramayoristasapp.DAO.DAOException
+import com.upc.gamarramayoristasapp.DAO.MetodoPagoDAO
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.carrito.Carrito
 import com.upc.gamarramayoristasapp.pago.adapter.TarjetaAdapter
 import com.upc.gamarramayoristasapp.pago.adapter.TarjetaViewHolder
 
 class MetodoPago : AppCompatActivity() {
+
+    lateinit var resultados : ArrayList<Tarjeta>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,14 +38,34 @@ class MetodoPago : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val fab: FloatingActionButton = findViewById(R.id.btnNuevaTarjeta)
+        fab.setOnClickListener {
+            // Acción al hacer clic en el FAB
+            //Toast.makeText(this, "FAB clickeado", Toast.LENGTH_SHORT).show()
+            var intent = Intent(this, NuevaTarjeta::class.java)
+            startActivity(intent)
+        }
+
+
     }
+
 
     private fun initRecyclerView(){
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerTarjetas)
-        recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = TarjetaAdapter(TarjetaProvider.listaTarjetas)
 
+        val dao = MetodoPagoDAO(baseContext)
+        try {
+            resultados = dao.ListarMetodoPago("1")
+
+            val recyclerView = findViewById<RecyclerView>(R.id.recyclerTarjetas)
+            recyclerView.setHasFixedSize(true)
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = TarjetaAdapter(resultados)
+
+        } catch (e: DAOException) {
+            //Log.i(Tools.LOGTAG, "BuscarActivity ==> " + e.message)
+        }
     }
+
 
 }

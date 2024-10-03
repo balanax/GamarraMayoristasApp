@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +18,7 @@ import com.upc.gamarramayoristasapp.carrito.Carrito
 import com.upc.gamarramayoristasapp.favoritos.Favoritos
 import com.upc.gamarramayoristasapp.perfil.Perfil
 import com.upc.gamarramayoristasapp.producto.Categoria
+import com.upc.gamarramayoristasapp.producto.DetalleProducto
 
 class Inicio : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +40,26 @@ class Inicio : AppCompatActivity() {
 //            var intent = Intent(this, Carrito::class.java)
 //            startActivity(intent)
 //        }
+        //Para mostrar la pantalla de inicio_nuevo
+        val verTodo =findViewById<TextView>(R.id.textVertodo)
+
+        verTodo.setOnClickListener {
+            var intent = Intent(this, Inicio_Nuevo::class.java)
+            startActivity(intent)
+        }
+        //Al dar click imagen de la pantalla nueva, se muestra la pantalla del detalle del producto
+        val imageDetalleProd1 =findViewById<ImageView>(R.id.imageDetalleProd1)
+        val imageDetalleProd2 =findViewById<ImageView>(R.id.imageDetalleProd2)
+
+        imageDetalleProd1.setOnClickListener {
+            var intent = Intent(this, DetalleProducto::class.java)
+            startActivity(intent)
+        }
+        imageDetalleProd2.setOnClickListener {
+            var intent = Intent(this, DetalleProducto::class.java)
+            startActivity(intent)
+        }
+
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 

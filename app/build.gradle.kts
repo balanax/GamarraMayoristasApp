@@ -44,9 +44,11 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation ("com.github.bumptech.glide:glide:4.14.2")
     implementation(libs.androidx.gridlayout)
+    implementation(libs.androidx.tools.core)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
+    implementation("androidx.activity:activity:1.6.1")
+    implementation("com.android.volley:volley:1.2.1")
 }
