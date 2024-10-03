@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,8 +16,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.appgamarra.PerfilAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.upc.gamarramayoristasapp.Model.OrdenesModel
+import com.upc.gamarramayoristasapp.Model.UsuarioModel
 import com.upc.gamarramayoristasapp.R
 import com.upc.gamarramayoristasapp.carrito.Carrito
+import com.upc.gamarramayoristasapp.database.DatabaseHelper
 import com.upc.gamarramayoristasapp.favoritos.Favoritos
 import com.upc.gamarramayoristasapp.inicio.Inicio
 import com.upc.gamarramayoristasapp.perfil.OptionPerfil
@@ -26,11 +30,21 @@ class Perfil : AppCompatActivity() {
 
     private var listaProfile: MutableList<OptionPerfil> = mutableListOf()
     private lateinit var recycler: RecyclerView
+    private lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_perfil)
+
+        dbHelper = DatabaseHelper(this)
+
+        val Nombres = findViewById<TextView>(R.id.tvNombres)
+        val Correo = findViewById<TextView>(R.id.tvCorreo)
+        val usuario = dbHelper.getInfoUsuarioById("1")
+
+        Nombres.setText(usuario?.nombres + " "+ usuario?.apellidos)
+        Correo.setText(usuario?.correo)
 
         listaProfile.add(
             OptionPerfil("Mis Pedidos", "Ya tengo 12 pedidos", PerfilOptionType.MIS_PEDIDOS)
@@ -70,6 +84,8 @@ class Perfil : AppCompatActivity() {
                 PerfilOptionType.MIS_RESEÑAS -> {
                 }
                 PerfilOptionType.AJUSTES -> {
+                    val intent = Intent(this, ModificarPerfil::class.java)
+                    startActivity(intent)
                 }
             }
         }
