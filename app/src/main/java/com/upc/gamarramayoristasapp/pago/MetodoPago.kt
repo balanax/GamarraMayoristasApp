@@ -50,6 +50,7 @@ class MetodoPago : AppCompatActivity() {
 
     }
 
+
     private fun initRecyclerView(){
 
         val dao = MetodoPagoDAO(baseContext)
