@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.pago.CompraFinalizada
 import com.upc.gamarramayoristasapp.pago.DireccionEnvio
 
 
@@ -36,6 +37,12 @@ class CarritoVerificar() : AppCompatActivity() {
         val bt_cambiar = findViewById<TextView>(R.id.tvCambiar)
         bt_cambiar.setOnClickListener{
             var intent = Intent(this, DireccionEnvio::class.java)
+            startActivity(intent)
+        }
+
+        val bt_procesarPago = findViewById<Button>(R.id.btProcesarPago)
+        bt_procesarPago.setOnClickListener {
+            var intent = Intent(this, CompraFinalizada::class.java)
             startActivity(intent)
         }
 

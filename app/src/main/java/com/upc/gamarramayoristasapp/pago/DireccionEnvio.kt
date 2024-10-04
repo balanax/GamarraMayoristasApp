@@ -15,6 +15,7 @@ import com.upc.gamarramayoristasapp.DAO.DAOException
 import com.upc.gamarramayoristasapp.DAO.DireccionDAO
 import com.upc.gamarramayoristasapp.DAO.MetodoPagoDAO
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.carrito.CarritoVerificar
 import com.upc.gamarramayoristasapp.pago.adapter.DireccionAdapter
 import com.upc.gamarramayoristasapp.pago.adapter.TarjetaAdapter
 
@@ -38,7 +39,7 @@ class DireccionEnvio : AppCompatActivity() {
         //Boton para regresar a la Opcion de Metodos de Pago
         val btn_regresar = findViewById<Button>(R.id.btnRegresar)
         btn_regresar.setOnClickListener{
-            var intent = Intent(this, MetodoPago::class.java)
+            var intent = Intent(this, CarritoVerificar::class.java)
             startActivity(intent)
         }
 
