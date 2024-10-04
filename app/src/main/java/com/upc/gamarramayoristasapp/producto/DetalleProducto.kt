@@ -1,13 +1,20 @@
 package com.upc.gamarramayoristasapp.producto
 
+import ProductoDAO
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.upc.gamarramayoristasapp.DAO.DAOException
+import com.upc.gamarramayoristasapp.DAO.MetodoPagoDAO
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.pago.adapter.TarjetaAdapter
 
 class DetalleProducto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +43,23 @@ class DetalleProducto : AppCompatActivity() {
         adapterColor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerColor.adapter = adapterColor
 
+        val idproducto = intent.getStringExtra("idproducto")
+
+        val dao = ProductoDAO(baseContext)
+        try {
+            val producto = dao.BuscarProducto(idproducto.toString())
+
+            val ptvTipoProducto = findViewById<TextView>(R.id.tvTipoProducto)
+            val ptvDescripcionProducto = findViewById<TextView>(R.id.tvDescripcionProducto)
+            val tvValorProducto = findViewById<TextView>(R.id.tvValorProducto)
+
+            ptvTipoProducto.text = producto.nombre
+            ptvDescripcionProducto.text = producto.descripcion
+            tvValorProducto.text = producto.precio
+
+        } catch (e: DAOException) {
+            //Log.i(Tools.LOGTAG, "BuscarActivity ==> " + e.message)
+        }
 
     }
 }

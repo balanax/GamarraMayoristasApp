@@ -53,10 +53,13 @@ class Inicio : AppCompatActivity() {
 
         imageDetalleProd1.setOnClickListener {
             var intent = Intent(this, DetalleProducto::class.java)
+            intent.putExtra("idproducto", "P001")
             startActivity(intent)
         }
+
         imageDetalleProd2.setOnClickListener {
             var intent = Intent(this, DetalleProducto::class.java)
+            intent.putExtra("idproducto", "P007")
             startActivity(intent)
         }
 
