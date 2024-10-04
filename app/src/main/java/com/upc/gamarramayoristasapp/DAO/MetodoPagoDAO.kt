@@ -101,9 +101,48 @@ class MetodoPagoDAO(myContext: Context) {
             db.close()
         }
         return lista
-
-
     }
+
+    fun TarjetaPredeterminada(IdUsuario: String): Tarjeta{
+
+        val db = dbHelper.readableDatabase
+        var pTarjeta = Tarjeta("","","","",true)
+        try {
+            val c: Cursor = db.rawQuery(
+                "select id_metodo_pago, id_usuario, nro_tarjeta, nombre_cliente, fecha_caducidad, predeterminado from Metodo_Pago where predeterminado = 1 and id_usuario = $IdUsuario ",
+                null
+            )
+            if (c.count > 0) {
+                c.moveToFirst()
+                do {
+
+                    val id_metodo_pago: String = c.getString(c.getColumnIndex("id_metodo_pago"))
+                    val nro_tarjeta: String = c.getString(c.getColumnIndex("nro_tarjeta"))
+                    val nombre_cliente: String = c.getString(c.getColumnIndex("nombre_cliente"))
+                    val fecha_caducidad: String = c.getString(c.getColumnIndex("fecha_caducidad"))
+                    val predeterminado: Int = c.getInt(c.getColumnIndex("predeterminado"))
+
+                    val isPredeterminado: Boolean
+                    if(predeterminado == 1){
+                        isPredeterminado = true
+                    }else{
+                        isPredeterminado = false
+                    }
+
+                     pTarjeta = Tarjeta(id_metodo_pago, nro_tarjeta, nombre_cliente, fecha_caducidad, isPredeterminado)
+
+
+                } while (c.moveToNext())
+            }
+            c.close()
+        } catch (e: Exception) {
+            throw DAOException("MetodoPagolDAO: Error al obtener: " + e.message)
+        } finally {
+            db.close()
+        }
+        return pTarjeta
+    }
+
 
     fun ObtenerMetodoPago(): MetodoPagoModel{
 

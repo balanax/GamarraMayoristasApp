@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.upc.gamarramayoristasapp.DAO.DAOException
 import com.upc.gamarramayoristasapp.DAO.MetodoPagoDAO
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.carrito.CarritoVerificar
 import java.util.Calendar
 
 class NuevaTarjeta : AppCompatActivity() {
@@ -45,7 +46,7 @@ class NuevaTarjeta : AppCompatActivity() {
 //                Toast.makeText(this, "Datos Incompletos o Incorrectos", Toast.LENGTH_SHORT).show()
 //            }
                 grabar()
-                var intent = Intent(this, MetodoPago::class.java)
+                var intent = Intent(this, CarritoVerificar::class.java)
                 startActivity(intent)
 
         }
@@ -53,7 +54,7 @@ class NuevaTarjeta : AppCompatActivity() {
         val btn_regresar = findViewById<Button>(R.id.btnRegresar)
 
         btn_regresar.setOnClickListener{
-            var intent = Intent(this, MetodoPago::class.java)
+            var intent = Intent(this, CarritoVerificar::class.java)
             startActivity(intent)
         }
 

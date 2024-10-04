@@ -11,6 +11,7 @@ import com.upc.gamarramayoristasapp.DAO.DAOException
 import com.upc.gamarramayoristasapp.DAO.DireccionDAO
 import com.upc.gamarramayoristasapp.DAO.MetodoPagoDAO
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.carrito.CarritoVerificar
 import com.upc.gamarramayoristasapp.pago.CompraFinalizada
 import com.upc.gamarramayoristasapp.pago.Direccion
 import com.upc.gamarramayoristasapp.pago.DireccionEnvio
@@ -45,7 +46,7 @@ class DireccionViewHolder(view: View): RecyclerView.ViewHolder(view)  {
         }
 
         imgBotonDireccion.setOnClickListener {
-            var intent = Intent(imgBotonDireccion.context, CompraFinalizada::class.java)
+            var intent = Intent(imgBotonDireccion.context, CarritoVerificar::class.java)
             imgBotonDireccion.context.startActivity(intent)
         }
 
@@ -60,7 +61,7 @@ class DireccionViewHolder(view: View): RecyclerView.ViewHolder(view)  {
                 Toast.makeText(activo.context,e.message, Toast.LENGTH_SHORT).show()
             }
 
-            var intent = Intent(activo.context, DireccionEnvio::class.java)
+            var intent = Intent(activo.context, CarritoVerificar::class.java)
             activo.context.startActivity(intent)
 
         }
