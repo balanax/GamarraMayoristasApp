@@ -5,7 +5,129 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".producto.Categoria">
+    tools:context=".producto.Categoria"
+    android:background="#EFEFEF">
+
+    <!-- Contenedor del título y subtítulo -->
+    <LinearLayout
+        android:id="@+id/barraTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="30dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:outlineAmbientShadowColor="@color/white">
+
+        <ImageButton
+            android:id="@+id/ivRetroceder"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="15dp"
+
+            android:src="@drawable/ic_arrow_left"
+            android:backgroundTint="@color/white"
+            android:visibility="visible"/>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/metropolis_bold"
+            android:gravity="center"
+            android:text="Categorias"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTipoCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/barraTitulo">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_entregada"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/fondo_botonnegro"
+            android:text="Mujer"
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_enproceso"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/fondo_botonblanco"
+            android:text="Hombre"
+            android:textColor="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_cancelada"
+            style="@android:style/Widget.Button"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/fondo_botonblanco"
+            android:text="Niños"
+            android:textColor="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBannerDescuento"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        tools:ignore="MissingConstraints"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/llTipoCategoria"
+        android:background="#DB3022"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VENTA DE VERANO"
+            android:gravity="center"
+            android:fontFamily="@font/metropolis_bold"
+            android:textColor="@color/white"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hasta 50% de descuento"
+            android:gravity="center"
+            android:fontFamily="@font/metropolis_medium"
+            android:textColor="@color/white"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/llBannerDescuento"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
 
 
     <!-- Menú Inferior -->

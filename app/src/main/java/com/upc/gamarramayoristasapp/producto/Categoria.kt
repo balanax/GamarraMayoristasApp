@@ -6,12 +6,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.upc.gamarramayoristasapp.R
 import com.upc.gamarramayoristasapp.carrito.Carrito
+import com.upc.gamarramayoristasapp.carrito.CarritoProvider
+import com.upc.gamarramayoristasapp.carrito.adapter.CarritoAdapter
 import com.upc.gamarramayoristasapp.favoritos.Favoritos
 import com.upc.gamarramayoristasapp.inicio.Inicio
 import com.upc.gamarramayoristasapp.perfil.Perfil
+import com.upc.gamarramayoristasapp.producto.adapter.CategoriaAdapter
 
 class Categoria : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +28,8 @@ class Categoria : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        initRecycleView()
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.selectedItemId = R.id.menu_categoria
@@ -59,5 +66,11 @@ class Categoria : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun initRecycleView(){
+        val recycleView = findViewById<RecyclerView>(R.id.recycleCategoria)
+        recycleView.layoutManager = LinearLayoutManager(this)
+        recycleView.adapter = CategoriaAdapter(CategoriaProvider.CategoriaList)
     }
 }
