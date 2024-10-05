@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.upc.gamarramayoristasapp.DAO.DAOException
 import com.upc.gamarramayoristasapp.DAO.MetodoPagoDAO
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.carrito.CarritoVerificar
 import com.upc.gamarramayoristasapp.pago.DireccionEnvio
 import com.upc.gamarramayoristasapp.pago.MetodoPago
 import com.upc.gamarramayoristasapp.pago.Tarjeta
@@ -49,7 +50,7 @@ class TarjetaViewHolder (view: View): RecyclerView.ViewHolder(view) {
         }
 
         imgTarjeta.setOnClickListener {
-            var intent = Intent(imgTarjeta.context, DireccionEnvio::class.java)
+            var intent = Intent(imgTarjeta.context, CarritoVerificar::class.java)
             imgTarjeta.context.startActivity(intent)
             //Toast.makeText(imgTarjeta.context, "Tarjeta: "+ tarjeta.text.toString(), Toast.LENGTH_SHORT).show()
 
@@ -66,7 +67,7 @@ class TarjetaViewHolder (view: View): RecyclerView.ViewHolder(view) {
                 Toast.makeText(activo.context,e.message, Toast.LENGTH_SHORT).show()
             }
 
-            var intent = Intent(activo.context, MetodoPago::class.java)
+            var intent = Intent(activo.context, CarritoVerificar::class.java)
             imgTarjeta.context.startActivity(intent)
 
         }

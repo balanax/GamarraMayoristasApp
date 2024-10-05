@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.upc.gamarramayoristasapp.DAO.DAOException
 import com.upc.gamarramayoristasapp.DAO.MetodoPagoDAO
 import com.upc.gamarramayoristasapp.R
+import com.upc.gamarramayoristasapp.carrito.CarritoVerificar
 
 class NuevaDireccionEnvio : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class NuevaDireccionEnvio : AppCompatActivity() {
         //Boton para regresar a la Opcion de Direcciones
         val btn_regresar = findViewById<Button>(R.id.btnRegresar)
         btn_regresar.setOnClickListener{
-            var intent = Intent(this, DireccionEnvio::class.java)
+            var intent = Intent(this, CarritoVerificar::class.java)
             startActivity(intent)
         }
 
@@ -37,7 +38,7 @@ class NuevaDireccionEnvio : AppCompatActivity() {
         val btn_Grabar = findViewById<Button>(R.id.btnRegistrarDireccion)
         btn_Grabar.setOnClickListener {
             //grabar()
-            var intent = Intent(this, DireccionEnvio::class.java)
+            var intent = Intent(this, CarritoVerificar::class.java)
             startActivity(intent)
         }
 

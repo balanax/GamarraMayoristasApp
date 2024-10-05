@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -19,6 +20,7 @@ import com.upc.gamarramayoristasapp.DAO.DAOException
 import com.upc.gamarramayoristasapp.DAO.MetodoPagoDAO
 import com.upc.gamarramayoristasapp.R
 import com.upc.gamarramayoristasapp.carrito.Carrito
+import com.upc.gamarramayoristasapp.carrito.CarritoVerificar
 import com.upc.gamarramayoristasapp.pago.adapter.TarjetaAdapter
 import com.upc.gamarramayoristasapp.pago.adapter.TarjetaViewHolder
 
@@ -47,6 +49,11 @@ class MetodoPago : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val btn_regresar_carrito = findViewById<Button>(R.id.button)
+        btn_regresar_carrito.setOnClickListener{
+            var intent = Intent(this, CarritoVerificar::class.java)
+            startActivity(intent)
+        }
 
     }
 
